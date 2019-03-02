@@ -182,7 +182,7 @@ class HaystackSerializer(six.with_metaclass(HaystackSerializerMeta, serializers.
             prefix = ""
             if prefix_field_names:
                 prefix = "_%s__" % self._get_index_class_name(index_cls)
-            for field_name, field_type in six.iteritems(index_cls.fields):
+            for field_name, field_type in index_cls.fields.items():
                 orig_name = field_name
                 field_name = "%s%s" % (prefix, field_name)
 
